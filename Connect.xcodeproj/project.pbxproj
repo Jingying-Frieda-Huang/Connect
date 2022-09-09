@@ -11,6 +11,8 @@
 		EDC6E76628CB643E0072153F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC6E76528CB643E0072153F /* ContentView.swift */; };
 		EDC6E76828CB643F0072153F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDC6E76728CB643F0072153F /* Assets.xcassets */; };
 		EDC6E76B28CB643F0072153F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDC6E76A28CB643F0072153F /* Preview Assets.xcassets */; };
+		EDC6E77228CB7D110072153F /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC6E77128CB7D110072153F /* SignUpView.swift */; };
+		EDC6E77428CB80E90072153F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC6E77328CB80E90072153F /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		EDC6E76528CB643E0072153F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EDC6E76728CB643F0072153F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDC6E76A28CB643F0072153F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EDC6E77128CB7D110072153F /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		EDC6E77328CB80E90072153F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,8 @@
 			children = (
 				EDC6E76328CB643E0072153F /* ConnectApp.swift */,
 				EDC6E76528CB643E0072153F /* ContentView.swift */,
+				EDC6E77128CB7D110072153F /* SignUpView.swift */,
+				EDC6E77328CB80E90072153F /* LoginView.swift */,
 				EDC6E76728CB643F0072153F /* Assets.xcassets */,
 				EDC6E76928CB643F0072153F /* Preview Content */,
 			);
@@ -138,6 +144,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDC6E76628CB643E0072153F /* ContentView.swift in Sources */,
+				EDC6E77228CB7D110072153F /* SignUpView.swift in Sources */,
+				EDC6E77428CB80E90072153F /* LoginView.swift in Sources */,
 				EDC6E76428CB643E0072153F /* ConnectApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

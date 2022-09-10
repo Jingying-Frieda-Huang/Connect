@@ -9,8 +9,17 @@ import SwiftUI
 
 struct SignUpView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            VStack {
+               
+            }
+            .navigationTitle("Sign Up")
+            .toolbar {
+                Button("Login") {
+                    // TODO: connect to Login Page
+                }
+            }
+        }
     }
 }
 

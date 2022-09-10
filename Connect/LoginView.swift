@@ -41,7 +41,7 @@ struct LoginView: View {
                         .foregroundColor(.white)
                         .padding()
                         .frame(width: 350, height: 50)
-                        .background(Color.ruddyBlue)
+                        .background(Color.green)
                         .cornerRadius(10.0)
                 }
                 .disabled(username.isEmpty || password.isEmpty)
@@ -49,6 +49,11 @@ struct LoginView: View {
             }
             .navigationTitle("Login")
             .padding()
+            .toolbar {
+                Button("Sign Up") {
+                    // TODO: connect to Sign Up Page
+                }
+            }
         }
     }
 }

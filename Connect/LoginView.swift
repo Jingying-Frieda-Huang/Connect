@@ -1,10 +1,11 @@
 //
-//  LoginView.swift
+//  LogInView.swift
 //  Connect
 //
-//  Created by Jingying(Frieda) Huang on 2022/9/9.
+//  Created by Jingying(Frieda) Huang on 2022/9/14.
 //
 
+import Foundation
 import SwiftUI
 
 extension Color {
@@ -12,43 +13,45 @@ extension Color {
     static let ruddyBlue = Color(red: 118/255, green: 171/255, blue: 223/255)
 }
 
-    
-struct LoginView: View {
+struct LogInView: View {
     @State private var email = ""
     @State private var password = ""
-    
-    var body: some View {
-        
-        NavigationView {
-            VStack {
-                TextField("Email", text: $email)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
 
-                SecureField("Password", text: $password)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                
-                Button(action: {
-                    print("logged in!")
-                }) {
-                    Text("LOG IN")
+    @EnvironmentObject var authViewModel: AuthenticationViewModel
+
+    var body: some View {
+        VStack {
+            TextField("Email", text: $email)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .disableAutocorrection(true)
+                .autocapitalization(.none)
+
+            SecureField("Password", text: $password)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .disableAutocorrection(true)
+                .autocapitalization(.none)
+
+            Button(action: {
+                guard !email.isEmpty, !password.isEmpty else {
+                    return
                 }
-                .withActionButtonStyles()
-                .disabled(email.isEmpty || password.isEmpty)
-                Spacer()
+
+                authViewModel.signIn(email: email, password: password)
+            }) {
+                Text("Sign In")
             }
-            .navigationTitle("Login")
-            .padding()
-            .toolbar {
-                Button("Sign Up") {
-                    // TODO: connect to Sign Up Page
-                }
-            }
+            .withActionButtonStyles()
+            .disabled(email.isEmpty || password.isEmpty)
+            NavigationLink("Create Account", destination: SignUpView())
+                .foregroundColor(Color.green)
+                .padding()
         }
+        .padding()
     }
 }
 
-struct LoginView_Previews: PreviewProvider {
+struct LogInView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        LogInView()
     }
 }

@@ -14,37 +14,26 @@ extension Color {
 
     
 struct LoginView: View {
-    @State private var username = ""
+    @State private var email = ""
     @State private var password = ""
     
     var body: some View {
         
         NavigationView {
-        
             VStack {
-                TextField("Username", text: $username)
-                    .padding()
-                    .background(Color.lightGray)
-                    .cornerRadius(5.0)
-                    .padding(.bottom, 20)
+                TextField("Email", text: $email)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+
                 SecureField("Password", text: $password)
-                    .padding()
-                    .background(Color.lightGray)
-                    .cornerRadius(5.0)
-                    .padding(.bottom, 20)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
                 
                 Button(action: {
                     print("logged in!")
                 }) {
                     Text("LOG IN")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .padding()
-                        .frame(width: 350, height: 50)
-                        .background(Color.green)
-                        .cornerRadius(10.0)
                 }
-                .disabled(username.isEmpty || password.isEmpty)
+                .withActionButtonStyles()
+                .disabled(email.isEmpty || password.isEmpty)
                 Spacer()
             }
             .navigationTitle("Login")
